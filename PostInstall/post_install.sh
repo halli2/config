@@ -11,7 +11,8 @@ sudo dnf install -y helix-git rust cargo rustfmt
 ## Shell
 sudo dnf copr enable -y atim/nushell
 sudo dnf copr enable -y atim/starship
-sudo dnf install -y zsh nushell zoxide starship procs lsd bat tldr ripgrep
+# skim is a fzf alternative
+sudo dnf install -y zsh nushell zoxide starship procs lsd bat tldr ripgrep skim
 
 # Configure git
 git config --global init.defaultBranch main
