@@ -1,3 +1,6 @@
 [submodule ".config/zsh/fzf/fzf-tab"]
 	path = .config/zsh/fzf/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+[submodule ".config/zsh/zsh-vi-mode"]
+	path = .config/zsh/zsh-vi-mode
+	url = https://github.com/jeffreytse/zsh-vi-mode.git
