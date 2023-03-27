@@ -1,0 +1,43 @@
+# theme = "base16_default_dark"
+theme = "base16_default_dark_transparent"
+# theme = "base16_terminal_fix"
+
+[editor]
+line-number = "relative"
+mouse = true
+auto-format = true
+bufferline = "multiple"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+
+[editor.lsp]
+display-messages = true
+
+[keys.normal]
+"A-+" = "switch_to_uppercase"
+'\' = "switch_to_lowercase"
+"C-+" = "switch_case"
+# "," = { w = ":w" }
+" " = { "å" = ":quit"}
+
+[keys.insert]
+A-h = "move_char_left"
+A-j = "move_line_down"
+A-k = "move_line_up"
+A-l = "move_char_right"
+A-o = "open_below"
+A-p = "open_above"

@@ -1,0 +1,27 @@
+[[language]]
+name = "rust"
+
+[language.config.checkOnSave]
+command = "clippy"
+
+[[language]]
+name = "python"
+file-types = ["py", "pyi"]
+roots = ["pyproject.toml","pyrightconfig.json"]
+config = {pylsp={plugins={pycodestyle={enabled=false},flake8={enabled=true,maxLineLength=120},pyflakes={enabled=false}}}}
+formatter = { command = "black", args = ["-", "-q"]}
+auto-format = true
+
+[[language]]
+name = "cpp"
+file-types = ["cc", "hh", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "mpp"]
+
+[[language]]
+name = "json"
+file-types = ["json", "gltf"]
+
+[[language]]
+name = "markdown"
+# Installed via NPM
+formatter = { command = "npx", args = ["prettier", "--parser", "markdown"]}
+auto-format = true
