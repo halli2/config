@@ -8,7 +8,7 @@ set $menu j4-dmenu-desktop
 
 ### Output config
 # output * bg /usr/share/backgrounds/default.png fill
-output * bg /home/flekz/Pictures/gruvy.jpg fill
+output * bg ./wp.jpg fill
 #output * bg /home/halli/Pictures/berserk.jpg stretch
 
 ### Input config
