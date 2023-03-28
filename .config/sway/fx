@@ -1,11 +1,11 @@
 # fx
 corner_radius 10
 smart_corner_radius on
-hide_edge_borders smart
+hide_edge_borders both
 default_dim_inactive 0.05
 shadows on
 ## for_window [CSGO] saturation set 2.0
 
 # sway
 gaps inner 10
-default_border pixel 4
+default_border pixel 2
