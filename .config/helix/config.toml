@@ -1,6 +1,8 @@
 # theme = "base16_default_dark"
-theme = "base16_default_dark_transparent"
+# theme = "base16_default_dark_transparent"
+# theme = "everforest_dark"
 # theme = "base16_terminal_fix"
+theme = "my_theme"
 
 [editor]
 line-number = "relative"
@@ -26,6 +28,7 @@ newline = "⏎"
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
 
 [keys.normal]
 "A-+" = "switch_to_uppercase"
