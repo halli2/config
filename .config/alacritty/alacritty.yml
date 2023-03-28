@@ -1,9 +1,15 @@
+# Core
+key_bindings:
+  - {key: Return, mods: Alt, action: SpawnNewInstance}
+
+# Rice
+cursor:
+  unfocused_hollow: true
 window:
   opacity: 0.8
   padding:
     x: 2
     y: 2
-
 
 # Themes
 # Colors (Gruvbox dark)
