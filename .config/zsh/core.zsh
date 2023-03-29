@@ -21,18 +21,6 @@ setopt \
     prompt_percent \
     prompt_subst \
     share_history
-export_paths=(
-    $HOME/.cargo/bin \
-    $HOME/go/bin \
-    $HOME/.local/bin
-)
-
-export PATH="${(j|:|)extra_paths}:$PATH"
-
-HISTFILE=$HOME/.zsh_history
-HISTFILESIZE=65536
-HISTSIZE=4096
-SAVEHIST=4096
 
 # Output time stats if program runs longer than a minute
 REPORTTIME=60

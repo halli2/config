@@ -4,3 +4,12 @@
 [submodule ".config/zsh/zsh-vi-mode"]
 	path = .config/zsh/zsh-vi-mode
 	url = https://github.com/jeffreytse/zsh-vi-mode.git
+[submodule ".config/zsh/zsh-completions"]
+	path = .config/zsh/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule ".config/zsh/zsh-autosuggestions"]
+	path = .config/zsh/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".config/zsh/zsh-fzf-history-search"]
+	path = .config/zsh/zsh-fzf-history-search
+	url = https://github.com/joshskidmore/zsh-fzf-history-search
