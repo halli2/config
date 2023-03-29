@@ -1,5 +1,4 @@
 export_paths=(
-    $HOME/.cargo/bin \
     $HOME/go/bin \
     $HOME/.local/bin
 )

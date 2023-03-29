@@ -1,8 +1,12 @@
 # Completion
+# Update rust comps
+rustup completions zsh > "$ZDOTDIR/completions/_rustup"
+rustup completions zsh cargo > "$ZDOTDIR/completions/_cargo"
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' # Case insensitive, UNLESS usage of upper case
 zstyle ':completion:*' menu select
 zstyle ':completion:*kill:*' command 'procs'
-fpath=("$ZDOTDIR/zsh-completions/src" $fpath)
+fpath+="$ZDOTDIR/zsh-completions/src"
+fpath+="$ZDOTDIR/completions"
 autoload -U compinit; compinit
 
 # Misc. Plugins
