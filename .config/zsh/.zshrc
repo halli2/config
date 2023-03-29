@@ -1,7 +1,5 @@
 # Completion
 # Update rust comps
-rustup completions zsh > "$ZDOTDIR/completions/_rustup"
-rustup completions zsh cargo > "$ZDOTDIR/completions/_cargo"
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' # Case insensitive, UNLESS usage of upper case
 zstyle ':completion:*' menu select
 zstyle ':completion:*kill:*' command 'procs'
@@ -25,6 +23,8 @@ function my_zvm_after_lazy_keybindings() {
 }
 function zvm_after_init() {
     zvm_bindkey viins '^R' fzf-history-widget
+    # Needs to be sourced at the end
+    source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 }
 zvm_after_lazy_keybindings_commands+=(my_zvm_after_lazy_keybindings)
 zvm_after_init_commands+=(zvm_after_init)
@@ -43,3 +43,4 @@ do
     . "${module}"
   fi
 done
+

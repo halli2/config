@@ -16,3 +16,6 @@
 [submodule ".config/zsh/fzf/zsh-fzf-history-search"]
 	path = .config/zsh/fzf/zsh-fzf-history-search
 	url = https://github.com/joshskidmore/zsh-fzf-history-search
+[submodule ".config/zsh/zsh-syntax-highlighting"]
+	path = .config/zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting

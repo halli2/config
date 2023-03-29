@@ -25,6 +25,16 @@ cd_up() {
     esac
 }
 
+_update_zsh() {
+    rm "$ZDOTDIR/completions/_rustup"
+    rm "$ZDOTDIR/completions/_cargo"
+    rm "$ZDOTDIR/completions/_starship"
+    rustup completions zsh > "$ZDOTDIR/completions/_rustup"
+    rustup completions zsh cargo > "$ZDOTDIR/completions/_cargo"
+    starship completions zsh > "$ZDOTDIR/completions/_starship"
+    source "$ZDOTDIR/.zshrc"
+}
+
 _update() {
     if command_exists dnf; then
         echo "Update fedora packages"
@@ -40,4 +50,7 @@ _update() {
         echo "Update Rustup"
         rustup update
     fi
+
+    _update_zsh
 }
+

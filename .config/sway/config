@@ -42,7 +42,7 @@ bar {
     position top
     hidden_state hide
     mode hide
-    modifier Mod4+Ctrl
+    modifier Mod4
 }
 
 # Auto startup

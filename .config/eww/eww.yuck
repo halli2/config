@@ -1,31 +1,41 @@
-(defwidget bar []
-  (centerbox :orientation "h"
-    (music)
-    (music)
-    (music)))
+; (defwidget bar []
+;   (centerbox :orientation "h"
+;     (music)
+;     (music)
+;     (music)))
 
-(defwidget music []
-  (box :class "music"
-       :orientation "h"
-       :space-evenly false
-       :halign "center"
-      {music != ":DD" ? "🎵${music}" : "pogg"}))
+; (defwidget music []
+;   (box :class "music"
+;        :orientation "h"
+;        :space-evenly false
+;        :halign "center"
+;       {music != ":DD" ? "🎵${music}" : "pogg"}))
 
-(deflisten music :initial ""
-  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+; (deflisten music :initial ""
+;   "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
 
-(defpoll volume :interval "1s"
-  "scripts/getvol")
+; (defpoll volume :interval "1s"
+;   "scripts/getvol")
 
-(defwindow bar
-  :monitor 0
-  :windowtype "dock"
-  :geometry (geometry :x "0%"
-                      :y "0%"
-                      :width "100%"
-                      :height "10px"
-                      :anchor "top center")
-  :reserve (struts :side "top" :distance "4%")
-  (bar))
+; (defwindow bar
+;   :monitor 0
+;   :windowtype "dock"
+;   :geometry (geometry :x "0%"
+;                       :y "0%"
+;                       :width "100%"
+;                       :height "10px"
+;                       :anchor "top center")
+;   :reserve (struts :side "top" :distance "4%")
+;   (bar))
 
+;; Vars
+(defpoll TIME :interval "5s" 'date +\"%H-%M\"')
 
+;; clock
+(defwidget clock []
+  (box :class "clockwin" :orientation "h" ;:spacing 50 :vexpand "false" :hexpand "false"
+      (label :class "time_min" :wrap "true" :text TIME)))
+
+; (defwindow clock :windowtype "toolbar" :stacking "fg" :wm-ignore true :focusable "false" :monitor 0 
+;   :geometry (geometry :x "98%" :y "0%" :width "0%" :height "0%")
+;     (clock))
