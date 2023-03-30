@@ -11,7 +11,10 @@ sudo dnf copr enable -y flekz/helix-git
 sudo dnf copr enable -y atim/nushell
 sudo dnf copr enable -y atim/starship
 
-sudo dnf install -y zsh nushell zoxide starship procs lsd bat tldr ripgrep helix-git git
+sudo dnf copr enable peterwu/iosevka
+
+sudo dnf install -y zsh nushell zoxide starship procs lsd bat tldr ripgrep \
+  helix-git git iosevka-term-ss11-fonts
 
 # Configure git
 git config --global init.defaultBranch main
