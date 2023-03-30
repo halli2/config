@@ -3,7 +3,7 @@
 # Polkit
 exec --no-startup-id lxpolkit
 
-set $term alacritty
+set $term wezterm
 set $menu j4-dmenu-desktop
 
 ### Output config
