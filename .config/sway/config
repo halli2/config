@@ -12,12 +12,6 @@ output * bg ./wp.jpg fill
 #output * bg /home/halli/Pictures/berserk.jpg stretch
 
 ### Input config
-input "1739:52804:MSFT0001:00_06CB:CE44_Touchpad" {
-    dwt enabled
-    tap enabled
-    natural_scroll enabled
-    middle_emulation enabled
-}
 input * {
     xkb_layout "no"
 }
@@ -89,3 +83,4 @@ include /etc/sway/config.d/*
 include ./desktop_config
 include ./fx
 include ./key_settings
+include ./pc_specific
