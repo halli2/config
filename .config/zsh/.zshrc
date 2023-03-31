@@ -37,11 +37,10 @@ eval "$(zoxide init zsh)"
 # Dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-for module in "$ZDOTDIR/*"
-do
-  if [ -f "${module}" ]; then
-    . "${module}"
-  fi
-done
-
-export PATH="$HOME/.local/bin:$PATH"
+. "$ZDOTDIR/env.zsh"
+. "$ZDOTDIR/path.zsh"
+. "$ZDOTDIR/core.zsh"
+. "$ZDOTDIR/hook.zsh"
+. "$ZDOTDIR/alias.zsh"
+. "$ZDOTDIR/fzf.zsh"
+. "$ZDOTDIR/path.zsh"
