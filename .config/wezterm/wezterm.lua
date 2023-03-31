@@ -18,14 +18,14 @@ return {
     -- font = wez.font 'Iosevka',
     -- font = wez.font 'Hack Nerd Font Mono',
     font = wez.font 'Iosevka Term SS11 Md Ex',
-    font_size = 10.0,
+    font_size = 11.0,
     -- color_scheme = 'Default Dark (base16)',
     color_scheme = "Gruvbox dark, pale (base16)",
     check_for_updates = false,
 
     -- color_scheme = 'Catppuccin Macchiato',
     window_padding = {
-        left = 3, right = 3,
+        left = 5, right = 1,
         top = 3, bottom = 3,
     },
     use_fancy_tab_bar = false,
