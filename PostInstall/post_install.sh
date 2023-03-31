@@ -14,7 +14,10 @@ sudo dnf copr enable -y atim/starship
 sudo dnf copr enable peterwu/iosevka
 
 sudo dnf install -y zsh nushell zoxide starship procs lsd bat tldr ripgrep \
-  helix-git git iosevka-term-ss11-fonts
+  helix-git \
+  git \
+  iosevka-term-ss11-fonts \
+  # cronie cronie-anacron \ server..
 
 # Configure git
 git config --global init.defaultBranch main
@@ -25,3 +28,7 @@ sudo dnf clean all
 # set defaults
 chsh -s $(which zsh)
 
+# Set up systemd
+# Server
+systemctl start crond.service
+systemctl enable crond.service 
