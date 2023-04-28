@@ -30,6 +30,9 @@ newline = "⏎"
 display-messages = true
 display-inlay-hints = true
 
+[editor.soft-wrap]
+enable = true
+
 [keys.normal]
 "A-+" = "switch_to_uppercase"
 '\' = "switch_to_lowercase"
