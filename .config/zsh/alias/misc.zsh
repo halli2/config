@@ -38,12 +38,12 @@ _update_zsh() {
 _update() {
     if command_exists dnf; then
         echo "Update fedora packages"
-        sudo dnf update
+        sudo dnf update -y
     fi
 
     if command_exists flatpak; then
         echo "Update flatpaks"
-        flatpak update
+        flatpak update -y
     fi
 
     if command_exists rustup; then

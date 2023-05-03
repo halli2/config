@@ -55,6 +55,7 @@ exec aerox3.sh
 # Application settings
 ## Floating windows
 for_window [class="Steam"] floating enable
+for_window [class="steam"] floating enable
 for_window [class="steamwebhelper"] floating enable
 for_window [app_id="mpv"] floating enable
 for_window [class="jclient-LoginFrame"] floating enable
@@ -79,6 +80,7 @@ for_window [app_id="UnrealEditor"] floating enable
 for_window [class="Blender"] floating enable
 
 no_focus [class="Steam"]
+no_focus [class="steam"]
 
 include /etc/sway/config.d/*
 include ./desktop_config
