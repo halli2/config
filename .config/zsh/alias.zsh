@@ -4,10 +4,14 @@ do
 done
 
 ## File searching utilities
-alias ls="lsd -a -X --group-directories-first"
+if command_exists lsd; then
+  alias ls="lsd -a -X --group-directories-first"
+fi
+if command_exists z; then
+  alias cd=z # zoxide
+fi
 alias fif="_fif" # "look in files"
 alias hfif="_hfif"
-alias cd=z # zoxide
 alias 'cd..'="cd_up" # Function to cange dir
 
 ## Miscellaneous.

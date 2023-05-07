@@ -1,9 +1,5 @@
 ### Misc functions used by aliases
 
-command_exists() {
-  command -v "$1" >/dev/null 2>&1
-}
-
 _cheat() {
     if [ -z "${1}" ]; then
         curl -fLm 7 "https://cheat.sh" | bat
@@ -29,6 +25,7 @@ _update_zsh() {
     rm "$ZDOTDIR/completions/_rustup"
     rm "$ZDOTDIR/completions/_cargo"
     rm "$ZDOTDIR/completions/_starship"
+    mkdir -p "$ZDOTDIR/completions"
     rustup completions zsh > "$ZDOTDIR/completions/_rustup"
     rustup completions zsh cargo > "$ZDOTDIR/completions/_cargo"
     starship completions zsh > "$ZDOTDIR/completions/_starship"

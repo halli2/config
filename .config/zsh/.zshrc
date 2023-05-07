@@ -1,3 +1,6 @@
+if [[ -d "$HOME/.cargo" ]]; then
+  . "$HOME/.cargo/env"
+fi
 # Completion
 # Update rust comps
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}' # Case insensitive, UNLESS usage of upper case
@@ -7,13 +10,30 @@ fpath+="$ZDOTDIR/zsh-completions/src"
 fpath+="$ZDOTDIR/completions"
 autoload -U compinit; compinit
 
+command_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
 # Misc. Plugins
-source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
-## Fzf
-source "$ZDOTDIR/fzf/key-bindings.zsh"
-source "$ZDOTDIR/fzf/completions.zsh"
-source "$ZDOTDIR/fzf/fzf-tab/fzf-tab.plugin.zsh"
-source "$ZDOTDIR/fzf/zsh-fzf-history-search/zsh-fzf-history-search.plugin.zsh"
+if command_exists fzf; then
+    source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    ## Fzf
+    source "$ZDOTDIR/fzf/key-bindings.zsh"
+    source "$ZDOTDIR/fzf/completions.zsh"
+    source "$ZDOTDIR/fzf/fzf-tab/fzf-tab.plugin.zsh"
+    source "$ZDOTDIR/fzf/zsh-fzf-history-search/zsh-fzf-history-search.plugin.zsh"
+    function zvm_after_init() {
+        zvm_bindkey viins '^R' fzf-history-widget
+        # Needs to be sourced at the end
+        source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+    }
+fi
+if ! command_exists fzf; then
+    function zvm_after_init() {
+        # Needs to be sourced at the end
+        source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+    }
+fi
 
 # Binds
 source "$ZDOTDIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
@@ -21,18 +41,17 @@ function my_zvm_after_lazy_keybindings() {
     zvm_bindkey vicmd 'gh' beginning-of-line
     zvm_bindkey vicmd 'gl' end-of-line
 }
-function zvm_after_init() {
-    zvm_bindkey viins '^R' fzf-history-widget
-    # Needs to be sourced at the end
-    source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
-}
 zvm_after_lazy_keybindings_commands+=(my_zvm_after_lazy_keybindings)
 zvm_after_init_commands+=(zvm_after_init)
 
 
 # Init
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+if command_exists starship; then
+    eval "$(starship init zsh)"
+fi
+if command_exists zoxide; then
+    eval "$(zoxide init zsh)"
+fi
 
 # Dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -44,3 +63,20 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 . "$ZDOTDIR/alias.zsh"
 . "$ZDOTDIR/fzf.zsh"
 . "$ZDOTDIR/path.zsh"
+
+
+
+
+# Toolboxes
+if [ -f /run/.toolboxenv ]; then
+    source /run/.containerenv
+    if [[ $name = "default-cli" ]]; then
+        alias imv="distrobox-host-exec imv"
+        alias flatpak="distrobox-host-exec flatpak"
+        alias mpv="flatpak run io.mpv.Mpv"
+    fi
+	# if [[ $name = "f38-rust" ]]; then
+	# 	# export PATH=$PATH:/usr/local/
+	# 	export PATH=$PATH
+	# fi
+fi
