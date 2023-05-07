@@ -1,0 +1,5 @@
+[Unit]
+Description=Update cli toolbox
+
+[Service]
+ExecStart=distrobox upgrade default-cli

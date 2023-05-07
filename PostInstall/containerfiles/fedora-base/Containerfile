@@ -1,0 +1,19 @@
+FROM fedora:38
+
+# dnf packages
+RUN dnf update -y 
+RUN dnf install -y dnf-plugins-core
+RUN dnf copr enable -y flekz/helix-git && \
+	dnf copr enable -y atim/starship
+
+COPY dnf-packages /
+RUN dnf install -y $(<dnf-packages) 
+RUN rm /dnf-packages
+
+RUN dnf clean all
+
+# pipx packages
+RUN pipx install "python-lsp-server[all]" && \
+	pipx install black
+
+CMD /bin/zsh
