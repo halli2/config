@@ -1,5 +1,5 @@
-[Unit]
+j[Unit]
 Description=Update cli toolbox
 
 [Service]
-ExecStart=distrobox upgrade default-cli
+ExecStart=/var/home/halli/.local/bin/update-distrobox.sh

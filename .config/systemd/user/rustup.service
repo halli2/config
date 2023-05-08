@@ -2,4 +2,4 @@
 Description=Update rust
 
 [Service]
-ExecStart=rustup update
+ExecStart=/var/home/halli/.cargo/bin/rustup update

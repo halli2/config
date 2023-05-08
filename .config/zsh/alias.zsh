@@ -4,8 +4,8 @@ do
 done
 
 ## File searching utilities
-if command_exists lsd; then
-  alias ls="lsd -a -X --group-directories-first"
+if command_exists exa; then
+  alias ls="exa -a --group-directories-first"
 fi
 if command_exists z; then
   alias cd=z # zoxide
@@ -17,3 +17,6 @@ alias 'cd..'="cd_up" # Function to cange dir
 ## Miscellaneous.
 alias cheat="_cheat"
 alias update="_update"
+
+# Flatpaks
+alias mpv="flatpak run io.mpv.Mpv"

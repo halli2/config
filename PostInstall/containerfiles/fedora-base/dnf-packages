@@ -1,14 +1,9 @@
 helix-git
 zsh
-zoxide
-starship
 procs
-lsd
-bat
 tldr
-ripgrep
 gcc
 pipx
 sqlite3
-fd-find
 git
+fzf

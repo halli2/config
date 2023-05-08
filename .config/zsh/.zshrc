@@ -65,12 +65,10 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 . "$ZDOTDIR/path.zsh"
 
 
-
-
 # Toolboxes
-if [ -f /run/.toolboxenv ]; then
+if [ -f /run/.containerenv ]; then
     source /run/.containerenv
-    if [[ $name = "default-cli" ]]; then
+    if [[ "$name" = "default-cli" ]]; then
         alias imv="distrobox-host-exec imv"
         alias flatpak="distrobox-host-exec flatpak"
         alias mpv="flatpak run io.mpv.Mpv"
