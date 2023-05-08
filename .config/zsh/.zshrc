@@ -73,6 +73,7 @@ if [ -f /run/.containerenv ]; then
         alias flatpak="distrobox-host-exec flatpak"
         alias mpv="flatpak run io.mpv.Mpv"
     fi
+    starship config container.format "[\$symbol \[$name\]](\$style)"
 	# if [[ $name = "f38-rust" ]]; then
 	# 	# export PATH=$PATH:/usr/local/
 	# 	export PATH=$PATH

@@ -174,3 +174,6 @@ format = '\[[$symbol($version)]($style)\]'
 
 [zig]
 format = '\[[$symbol($version)]($style)\]'
+
+[container]
+format = '[$symbol \[default-cli\]]($style)'
