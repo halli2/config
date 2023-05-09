@@ -25,10 +25,12 @@ _update_zsh() {
     rm "$ZDOTDIR/completions/_rustup"
     rm "$ZDOTDIR/completions/_cargo"
     rm "$ZDOTDIR/completions/_starship"
+    rm "$ZDOTDIR/completions/_atuin"
     mkdir -p "$ZDOTDIR/completions"
     rustup completions zsh > "$ZDOTDIR/completions/_rustup"
     rustup completions zsh cargo > "$ZDOTDIR/completions/_cargo"
     starship completions zsh > "$ZDOTDIR/completions/_starship"
+    atuin gen-completions --shell zsh > "$ZDOTDIR/completions/_atuin"
     source "$ZDOTDIR/.zshrc"
 }
 

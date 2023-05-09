@@ -4,10 +4,10 @@ do
 done
 
 ## File searching utilities
-if command_exists exa; then
+if _command_exists exa; then
   alias ls="exa -a --group-directories-first"
 fi
-if command_exists z; then
+if _command_exists z; then
   alias cd=z # zoxide
 fi
 alias fif="_fif" # "look in files"

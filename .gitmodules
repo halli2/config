@@ -19,3 +19,6 @@
 [submodule ".config/zsh/zsh-syntax-highlighting"]
 	path = .config/zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule ".config/zsh/skim.zsh"]
+	path = .config/zsh/skim.zsh
+	url = https://github.com/casonadams/skim.zsh
